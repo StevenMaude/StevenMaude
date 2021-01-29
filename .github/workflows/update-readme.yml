@@ -63,4 +63,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          hub pull-request -b "$MAIN_BRANCH" --push --message "$PR_TITLE: ${{ steps.date.outputs.DATE }}"
+          hub pull-request -b "$MAIN_BRANCH" --push --message "$PR_TITLE ${{ steps.date.outputs.DATE }}"
