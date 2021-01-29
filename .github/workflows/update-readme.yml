@@ -51,6 +51,7 @@ jobs:
 
       - name: Check for existing automated PR
         id: existing
+        continue-on-error: true
         if: steps.commit.outcome == 'success'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
