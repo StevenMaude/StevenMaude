@@ -1,0 +1,65 @@
+name: Update blog posts
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-blog-posts:
+    name: Update blog posts in README
+    runs-on: ubuntu-latest
+    env:
+      MAIN_BRANCH: "main"
+      PR_TITLE: "Update blog posts:"
+      URL: "https://www.stevenmaude.co.uk/feeds/all.atom.xml"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '^1.15.7'
+
+      # Based on https://stackoverflow.com/a/60942437
+      - name: Get current UTC datetime
+        id: date
+        run: echo "::set-output name=DATE::$(date -u +'%F')"
+
+      - name: Run code
+        run: go run ./cmd/recent-blog-posts "$URL" > "README.md"
+
+      - name: Check files have changed
+        id: diff
+        continue-on-error: true
+        run: |
+          ! git diff --exit-code
+
+      - name: Add files and commit
+        id: commit
+        if: steps.diff.outcome == 'success'
+        env:
+          GIT_COMMITTER_NAME: GitHub
+          GIT_COMMITTER_EMAIL: noreply@github.com
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git checkout -b "update-blog-posts-${{ steps.date.outputs.DATE }}"
+          git add "README.md"
+          git commit -m "Update blog posts in README.md: ${{ steps.date.outputs.DATE }}"
+
+      - name: Check for existing automated PR
+        id: existing
+        if: steps.commit.outcome == 'success'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ! hub pr list | grep "$PR_TITLE"
+
+      - name: Create pull request
+        if: steps.existing.outcome == 'success'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          hub pull-request -b "$MAIN_BRANCH" --push --message "$PR_TITLE: ${{ steps.date.outputs.DATE }}"
