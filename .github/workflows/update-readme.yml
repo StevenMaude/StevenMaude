@@ -34,7 +34,7 @@ jobs:
         id: diff
         continue-on-error: true
         run: |
-          ! git diff --exit-code
+          ! git diff --exit-code "README.md"
 
       - name: Add files and commit
         id: commit
