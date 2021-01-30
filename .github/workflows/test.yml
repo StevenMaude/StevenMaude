@@ -1,0 +1,37 @@
+name: Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-update-blog-posts:
+    name: Test blog post update
+    runs-on: ubuntu-latest
+    env:
+      BLOG_POST_COUNT: 11
+      URL: "https://www.stevenmaude.co.uk/feeds/all.atom.xml"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '^1.15.7'
+
+      # Check we have 11 lines of output; a title and 10 blog post links.
+      - name: Run code
+        run: test "$(go run  ./cmd/recent-blog-posts https://www.stevenmaude.co.uk/feeds/all.atom.xml | wc -l)" = "11"
+
+      - name: Run go mod tidy
+        run: go mod tidy
+
+      - name: Check go mod tidy does not result in changes
+        id: diff
+        run: |
+          git diff --exit-code
