@@ -1,4 +1,5 @@
 # Most recent blog posts :pencil:
+* [PyCon 2021: Secure software supply chains](https://www.stevenmaude.co.uk/posts/pycon-2021-secure-software-supply-chains)
 * [A review of "UNIX: A History and a Memoir"](https://www.stevenmaude.co.uk/posts/a-review-of-unix-a-history-and-a-memoir)
 * [Tracking down tracks](https://www.stevenmaude.co.uk/posts/tracking-down-tracks)
 * [Things I have learned from rebuilding a PC in 2021](https://www.stevenmaude.co.uk/posts/things-i-have-learned-from-rebuilding-a-pc-in-2021)
@@ -8,4 +9,3 @@
 * [Oh, fork it](https://www.stevenmaude.co.uk/posts/oh-fork-it)
 * ["The Missing Semester of Your CS Education": a course review](https://www.stevenmaude.co.uk/posts/the-missing-semester-of-your-cs-education-a-course-review)
 * [Strange symptoms of hard drive enclosure failure](https://www.stevenmaude.co.uk/posts/strange-symptoms-of-hard-drive-enclosure-failure)
-* [A ULPS take: Windows 10 black screens and slow boot](https://www.stevenmaude.co.uk/posts/a-ulps-take-windows-10-black-screens-and-slow-boot)
