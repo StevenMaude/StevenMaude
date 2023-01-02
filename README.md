@@ -1,4 +1,5 @@
 # Most recent blog posts :pencil:
+* [Migrating a Bitlocker Windows installation to a larger drive](https://www.stevenmaude.co.uk/posts/migrating-a-bitlocker-windows-installation-to-a-larger-drive)
 * [Link checking with lychee](https://www.stevenmaude.co.uk/posts/link-checking-with-lychee)
 * [PyCon 2021: Secure software supply chains](https://www.stevenmaude.co.uk/posts/pycon-2021-secure-software-supply-chains)
 * [A review of "UNIX: A History and a Memoir"](https://www.stevenmaude.co.uk/posts/a-review-of-unix-a-history-and-a-memoir)
@@ -8,4 +9,3 @@
 * [Garmin Forerunner 35: a competent budget running watch](https://www.stevenmaude.co.uk/posts/garmin-forerunner-35-a-competent-budget-running-watch)
 * [Continuous integration with GitHub Actions](https://www.stevenmaude.co.uk/posts/continuous-integration-with-github-actions)
 * [Oh, fork it](https://www.stevenmaude.co.uk/posts/oh-fork-it)
-* ["The Missing Semester of Your CS Education": a course review](https://www.stevenmaude.co.uk/posts/the-missing-semester-of-your-cs-education-a-course-review)
