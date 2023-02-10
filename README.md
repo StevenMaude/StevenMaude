@@ -1,4 +1,5 @@
 # Most recent blog posts :pencil:
+* [Adjustable height standing desks in small spaces](https://www.stevenmaude.co.uk/posts/adjustable-height-standing-desks-in-small-spaces)
 * [Migrating a Bitlocker Windows installation to a larger drive](https://www.stevenmaude.co.uk/posts/migrating-a-bitlocker-windows-installation-to-a-larger-drive)
 * [Link checking with lychee](https://www.stevenmaude.co.uk/posts/link-checking-with-lychee)
 * [PyCon 2021: Secure software supply chains](https://www.stevenmaude.co.uk/posts/pycon-2021-secure-software-supply-chains)
@@ -8,4 +9,3 @@
 * [Copying large iPhone videos to a Windows PC](https://www.stevenmaude.co.uk/posts/copying-large-iphone-videos-to-a-windows-pc)
 * [Garmin Forerunner 35: a competent budget running watch](https://www.stevenmaude.co.uk/posts/garmin-forerunner-35-a-competent-budget-running-watch)
 * [Continuous integration with GitHub Actions](https://www.stevenmaude.co.uk/posts/continuous-integration-with-github-actions)
-* [Oh, fork it](https://www.stevenmaude.co.uk/posts/oh-fork-it)
